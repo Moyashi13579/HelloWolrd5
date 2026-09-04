@@ -1,15 +1,24 @@
 ﻿Console.Write("あなたの国語の点数を入力してください：");
-int japaneseScore = Convert.ToInt32(Console.ReadLine());
+string? input = Console.ReadLine();
 
-if (japaneseScore >= 80)
+if (!int.TryParse(input, out int JapaneseScore))
 {
-    Console.WriteLine("あなたは優秀です");
+    Console.WriteLine("数字を入力してください");
 }
-else if (japaneseScore >= 60)
+else if (JapaneseScore < 0 || JapaneseScore > 100)
 {
-    Console.WriteLine("まあまあまあ、いいんじゃない？");
+    Console.WriteLine("0～100の範囲で入力してください");
+}
+else if (JapaneseScore >= 80)
+{
+    Console.WriteLine("貴殿は優秀でございます");
+}
+else if (JapaneseScore >= 60)
+{
+    Console.WriteLine("いいんじゃない？");
 }
 else
 {
-    Console.WriteLine("もっと頑張りましょう");
+    Console.WriteLine("NT");
 }
+
